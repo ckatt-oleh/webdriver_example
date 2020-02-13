@@ -72,28 +72,28 @@ class DocumentManagement extends Page {
     get searchResultCounting() { return $('//div[contains(text(),"Showing ")]'); }
     set searchResult(str) { this.attributeSearchElement = $(`//span[text()='${str}']`);}
     get searchResult() { return this.attributeSearchElement; }
-    set searchResultAttributeDocType(str) { this.attributeSearchElement = $(`(//span[text()='${str}'])[2]`);}
+    set searchResultAttributeDocType(str) { this.attributeSearchElement = $(`(//span[text()='${str}'])[1]`);}
     get searchResultAttributeDocType() { return this.attributeSearchElement; }
     get attributeSearch() { return $('//input[@value="attribute"]'); }
     get filterResultSearch() { return $('//div[@id="metadatSearchResultsDiv"]//input[@type="search"]'); }
 
     get attributeTypeMSel() { 
-        return $('//div[label="Attribute Type"]//div[@class="multiselect__tags"]'); 
+        return $('//div[label[contains(text(),"Attribute Type")]]//div[@class="multiselect__tags"]'); 
     }
     get attributeTypeInput() {
-        return $('//div[label="Attribute Type"]//input');
+        return $('//div[label[contains(text(),"Attribute Type")]]//input');
     }
     get attributeValueMSel() { 
-        return $('//div[label="Attribute Value"]//div[@class="multiselect__tags"]'); 
+        return $('//div[label[contains(text(),"Attribute Value")]]//div[@class="multiselect__tags"]'); 
     }
     get attributeValueInput() { 
-        return $('//div[label="Attribute Value"]//input'); 
+        return $('//div[label[contains(text(),"Attribute Value")]]//input'); 
     }
     get attributeDocTypeMSel() {
-        return $('(//div[@id="docTypeSearchContainer"])[2]');
+        return $('(//div[@id="docTypeSearchContainer"])[1]//div[@class="multiselect__tags"]');
     }
     get attributeDocTypeInput() { 
-        return $('(//div[@id="docTypeSearchContainer"])[2]//input'); 
+        return $('(//div[@id="docTypeSearchContainer"])[1]//input'); 
     }
     get searchPreloader() {
         return $('//div[@id="metadataSearch"]//div[@class="spinnerWrapper fade in"]');

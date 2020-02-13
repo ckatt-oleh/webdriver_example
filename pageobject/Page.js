@@ -36,7 +36,7 @@ class Page {
 
     fillMultiSelectInputVerTwo(multiSelect, valueInput, searchValue, searchResult){
         multiSelect.click();
-        browser.pause(500);
+        browser.pause(1000);
         valueInput.addValue(searchValue);
         browser.waitUntil(() => {
             return searchResult.isExisting();

@@ -30,7 +30,7 @@ describe('Check Document Page', () => {
         DocType = ${searchParam.attributeDocTyp}`, () => {
             browser.refresh();
             DocumentManagement
-                .openAttributeSearch()
+                // .openAttributeSearch()
                 .attributeTypeSearch(searchParam.attributeType)
                 .attributeValueSearch(searchParam.attributeValue)
                 .attributeDocTypeSearch(searchParam.attributeDocTyp)
